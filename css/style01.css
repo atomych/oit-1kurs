@@ -1,33 +1,3 @@
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-    user-select: none;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-
-    background-color: #a2b8ff;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-
-    margin: 0 auto;
-    padding: 20px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .title {
     margin-bottom: 50px;
 }
@@ -35,7 +5,20 @@ body {
 .list {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+}
+
+.list__wrapper {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 50px;
+}
+
+.list__container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
 }
 
 .list__title {
@@ -43,26 +26,25 @@ body {
 
     font-size: 25px;
     font-weight: 500;
+
+    text-align: center;
 }
 
 .list__photo {
     display: block;
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
     height: auto;
-
-    margin-bottom: 10px;
 }
 
 .list__item {
-    margin-bottom: 50px;
-
     font-weight: 300;
     font-size: 18px;
-
     width: 100%;
-    max-width: 600px;
-    text-align: center;
+    max-width: 400px;
+    text-align: justify;
+
+    flex: 1 0 auto;
     
     display: block;
     padding: 10px;
@@ -80,4 +62,48 @@ body {
 
 .nav__item:hover {
     opacity: 1;
+}
+
+@media (max-width: 860px) {
+    .list__wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list__container {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.scroll {
+    position: fixed;
+
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll--up {
+    bottom: 20px;
+    right: 20px;
+}
+
+.scroll--down {
+    top: 20px;
+    right: 20px;
+}
+
+.scroll img {
+    width: 40px;
+    height: 40px;
+}
+
+.scroll.hide {
+    display: none;
 }
